@@ -8,13 +8,17 @@ format: typst
 ## **Part 0: libraries**
 
 ```{r}
+av_data <- read.csv("av-energy-price-2021-2023.csv")
+
+head(av_data)
 
 ```
 
 ## **Part 1:** **Defining Research Question**
 
 Chosen Question:
-
+1. How has each state's share of renewable electricity changed from 2021 to 2023?
+2. How have average electricity prices changed from 2021–2023, and how does that relate to renewable growth?
 ## **Part 2: Data Preparation and Cleaning**
 
 ```{r}
