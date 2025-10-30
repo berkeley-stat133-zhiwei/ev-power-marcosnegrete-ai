@@ -12,6 +12,8 @@ format: typst
 library(readr)     
 library(dplyr)      
 library(stringr)   
+install.packages("ggplot2")
+library(ggplot2)
 
 setwd("/Users/marcosnegrete/ev-power-marcosnegrete-ai/data")
 
@@ -42,11 +44,15 @@ names(av21_23) <- gsub("\\(|\\)", "", names(av21_23))
 ```{r}
 
 
-
 ```
 
 ## **Part 4: Mapping Visualization**
 
 ```{r}
 
+ggplot(av21_23, aes(x = long, y = lat, group = group, fill = avg_energy_price)) +
+  geom_bar(color = "darkblue") + 
+  scale_fill_gradient(low = "yellow") +
+  labs(title = "Average Energy Price by State (2023)",
+       fill = "Avg Energy Price") 
 ```
