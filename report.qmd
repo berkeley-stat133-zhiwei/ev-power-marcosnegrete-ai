@@ -7,10 +7,17 @@ format: typst
 
 ## **Part 0: libraries**
 
-```{r}
-av_data <- read.csv("av-energy-price-2021-2023.csv")
 
-head(av_data)
+```{r}
+library(readr)     
+library(dplyr)      
+library(stringr)   
+
+setwd("/Users/marcosnegrete/ev-power-marcosnegrete-ai/data")
+
+av21_23 <- read_csv("av-energy-price-2021-2023.csv")
+
+av21_23
 
 ```
 
@@ -19,15 +26,22 @@ head(av_data)
 Chosen Question:
 1. How has each state's share of renewable electricity changed from 2021 to 2023?
 2. How have average electricity prices changed from 2021–2023, and how does that relate to renewable growth?
-## **Part 2: Data Preparation and Cleaning**
 
+## **Part 2: Data Preparation and Cleaning**
 ```{r}
 
+names(av21_23) <- tolower(names(av21_23))  
+names(av21_23) <- gsub(" ", "_", names(av21_23))  
+names(av21_23) <- gsub("-", "_", names(av21_23))    
+names(av21_23) <- gsub("\\(|\\)", "", names(av21_23))
 ```
+
 
 ## **Part 3: Joining / Pivoting Datasets for Analysis**
 
 ```{r}
+
+
 
 ```
 
